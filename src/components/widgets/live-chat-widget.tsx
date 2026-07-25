@@ -22,25 +22,19 @@ function nextId() {
   messageId += 1;
   return messageId;
 }
-
-function botReplyFor(input: string): string {
-  const lower = input.toLowerCase();
-  if (lower.includes("price") || lower.includes("cost") || lower.includes("pricing")) {
-    return "Our projects typically start from $499 for a Starter build, up to custom Enterprise scopes. Want me to open the Pricing page, or would you rather book a free consultation for an exact quote?";
-  }
-  if (lower.includes("consult") || lower.includes("call") || lower.includes("book")) {
-    return "I'll get that set up — head to the Book a Free Consultation page and pick a slot that works for you. Someone from our team will confirm within a few hours.";
-  }
-  if (lower.includes("website") || lower.includes("shopify") || lower.includes("store")) {
-    return "We'd love to help with that. Could you share a bit about your business and what you're hoping the site will do? Meanwhile, feel free to browse our Portfolio for similar builds.";
-  }
-  return "Thanks for reaching out! One of our team members will reply within a few hours. In the meantime, you can browse our Services or book a free consultation directly.";
-}
-
 export function LiveChatWidget() {
   const [open, setOpen] = React.useState(false);
   const [input, setInput] = React.useState("");
   const [typing, setTyping] = React.useState(false);
+  const [leadData, setLeadData] = React.useState({
+  name: "",
+  email: "",
+  phone: "",
+  project: "",
+});
+const [leadSent, setLeadSent] = React.useState(false);
+
+
   const [messages, setMessages] = React.useState<ChatMessage[]>([
     {
       id: nextId(),
@@ -48,23 +42,125 @@ export function LiveChatWidget() {
       text: "Hey! 👋 I'm the Alpha Global assistant. Ask me about pricing, timelines, or how we work — or leave a message and the team will follow up.",
     },
   ]);
+
   const scrollRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    scrollRef.current?.scrollTo({
+      top: scrollRef.current.scrollHeight,
+      behavior: "smooth",
+    });
   }, [messages, typing]);
+      
+  const sendMessage = async (text: string) => {
+  if (!text.trim()) return;
+  const updatedLead = { ...leadData };
 
-  const sendMessage = (text: string) => {
-    if (!text.trim()) return;
-    const userMessage: ChatMessage = { id: nextId(), from: "user", text };
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
-    setTyping(true);
-    setTimeout(() => {
-      setTyping(false);
-      setMessages((prev) => [...prev, { id: nextId(), from: "bot", text: botReplyFor(text) }]);
-    }, 900 + Math.random() * 500);
+if (!updatedLead.name && /^[A-Za-z ]{3,}$/.test(text.trim())) {
+  updatedLead.name = text.trim();
+} else if (
+  !updatedLead.email &&
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text.trim())
+) {
+  updatedLead.email = text.trim();
+} else if (
+  !updatedLead.phone &&
+  /^[0-9+\-\s]{10,15}$/.test(text.trim())
+) {
+  updatedLead.phone = text.trim();
+} else if (
+  updatedLead.name &&
+  updatedLead.email &&
+  updatedLead.phone &&
+  !updatedLead.project
+) {
+  updatedLead.project = text.trim();
+}
+
+setLeadData(updatedLead);
+
+  const userMessage: ChatMessage = {
+    id: nextId(),
+    from: "user",
+    text,
   };
+
+  setMessages((prev) => [...prev, userMessage]);
+  setInput("");
+  setTyping(true);
+
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+  message: text,
+history: [
+  ...messages.map((m) => ({
+    role: m.from === "user" ? "user" : "assistant",
+    content: m.text,
+  })),
+  {
+    role: "user",
+    content: text,
+  },
+],
+}),
+});
+    const data = await res.json();
+
+    setTyping(false);
+
+const botReply = data.reply ?? "";
+// Auto send lead to email
+if (
+  !leadSent &&
+  updatedLead.name &&
+  updatedLead.email &&
+  updatedLead.phone &&
+  updatedLead.project
+) {
+  await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      type: "contact",
+      name: updatedLead.name,
+      email: updatedLead.email,
+      phone: updatedLead.phone,
+      message: updatedLead.project,
+    }),
+  });
+
+  setLeadSent(true);
+}
+
+setMessages((prev) => [
+  ...prev,
+  {
+    id: nextId(),
+    from: "bot",
+    text: botReply,
+  },
+]);
+
+  } catch (err) {
+    setTyping(false);
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: nextId(),
+        from: "bot",
+        text: "Sorry, I'm having trouble connecting right now.",
+      },
+    ]);
+  }
+};
 
   return (
     <div className="fixed bottom-6 right-6 z-40">
@@ -92,7 +188,11 @@ export function LiveChatWidget() {
               </div>
             </div>
 
-            <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-5 py-4">
+            <div
+  ref={scrollRef}
+  data-lenis-prevent-wheel
+  className="flex-1 space-y-3 overflow-y-auto px-5 py-4"
+>
               {messages.map((message) => (
                 <div
                   key={message.id}

@@ -28,6 +28,11 @@ export function Modal({
   React.useEffect(() => {
     if (open) {
       lenis?.stop();
+
+// Allow native scrolling inside the modal
+setTimeout(() => {
+  panelRef.current?.setAttribute("data-lenis-prevent", "");
+}, 0);
       document.body.style.overflow = "hidden";
     } else {
       lenis?.start();
@@ -90,9 +95,10 @@ export function Modal({
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
-              "glass-strong relative z-10 max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-[28px] p-8 shadow-glow-lg md:p-10",
-              className
-            )}
+  "glass-strong relative z-10 max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-[28px] p-8 shadow-glow-lg md:p-10",
+  className
+)}
+data-lenis-prevent
           >
             <button
               type="button"

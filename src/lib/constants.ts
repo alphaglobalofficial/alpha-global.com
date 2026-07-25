@@ -14,9 +14,9 @@ export const SITE_CONFIG = {
   url: SITE_URL,
   email: envOrFallback(
     process.env.NEXT_PUBLIC_CONTACT_EMAIL,
-    "hello@alphaglobal.agency"
+    "alphaglobalofficial@gmail.com"
   ),
-  whatsapp: envOrFallback(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER, "923001234567"),
+  whatsapp: envOrFallback(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER, "923306257288"),
   location: "Karachi, Pakistan — serving clients worldwide",
   foundedYear: 2022,
 } as const;

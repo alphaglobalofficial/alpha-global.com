@@ -66,7 +66,9 @@ export function ContactClient() {
                   </p>
                   <div className="mt-5 flex flex-col gap-4">
                     <a
-                      href={`mailto:${SITE_CONFIG.email}`}
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${SITE_CONFIG.email}`}
+target="_blank"
+rel="noopener noreferrer"
                       className="flex items-center gap-3 text-sm transition-colors hover:text-electric"
                     >
                       <Mail className="size-4 shrink-0" />

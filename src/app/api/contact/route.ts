@@ -73,15 +73,21 @@ export async function POST(request: Request) {
       <p>${escapeHtml(data.message).replace(/\n/g, "<br/>")}</p>
     `;
 
-    await resend.emails.send({
-      from: fromEmail,
-      to: toEmail,
-      replyTo: data.email,
-      subject,
-      html,
-    });
+    const result = await resend.emails.send({
+  from: fromEmail,
+  to: toEmail,
+  replyTo: data.email,
+  subject,
+  html,
+});
 
-    return NextResponse.json({ ok: true, delivered: true });
+console.log("RESEND RESULT:", result);
+
+return NextResponse.json({
+  ok: true,
+  delivered: true,
+  result,
+});
   } catch (error) {
     console.error("[contact] Failed to send email:", error);
     return NextResponse.json(
