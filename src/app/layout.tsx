@@ -8,6 +8,7 @@ import { LoadingScreen, CursorGlow } from "@/components/providers/chrome-effects
 import { CookieConsent } from "@/components/widgets/cookie-consent";
 import { SITE_CONFIG, SITE_URL } from "@/lib/constants";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -79,11 +80,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
-      </head>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+  />
+
+  <Script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-791F3BFCM5"
+  />
+
+  <Script id="google-analytics">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-791F3BFCM5');
+    `}
+  </Script>
+</head>
       <body className="noise-overlay min-h-screen font-sans">
         <ThemeProvider>
           <SmoothScrollProvider>
