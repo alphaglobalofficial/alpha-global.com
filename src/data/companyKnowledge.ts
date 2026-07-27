@@ -11,7 +11,7 @@ Business Type:
 Digital Agency
 
 Website:
-https://alphaglobal.agency
+https://alphaglobaltechno.com
 
 Email:
 alphaglobalofficial@gmail.com

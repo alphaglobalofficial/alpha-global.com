@@ -2,7 +2,7 @@ import { envOrFallback } from "@/lib/utils";
 
 export const SITE_URL = envOrFallback(
   process.env.NEXT_PUBLIC_SITE_URL,
-  "https://alphaglobal.agency"
+  "https://alphaglobaltechno.com"
 );
 
 export const SITE_CONFIG = {
