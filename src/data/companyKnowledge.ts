@@ -33,53 +33,56 @@ Our mission is to build fast, modern and scalable digital products that help bus
 
 OUR SERVICES
 
-• Website Development
-Professional business websites using modern technologies.
+• Web Development
+Professional business websites, custom web applications, landing pages, and enterprise-grade solutions built with modern technologies.
 
-• Shopify Development
-Custom Shopify stores for dropshipping and branded businesses.
+• E-Commerce Development
+Scalable online stores including Shopify, WooCommerce, headless commerce, dropshipping, and payment integrations.
 
-• E-commerce Development
-Complete online stores with payment integration and professional UI.
+• UI/UX & Graphic Design
+Modern user interfaces, user experience design, branding assets, social media creatives, and premium graphic design.
 
-• UI / UX Design
-Modern and user-friendly website and mobile interface design.
+• Branding & Identity
+Logo design, complete brand identity, visual systems, brand guidelines, typography, and marketing materials.
 
-• Branding
-Logo Design
-Brand Identity
-Color Palette
-Business Branding
+• SEO Optimization
+Technical SEO, on-page optimization, keyword research, local SEO, Core Web Vitals, and search engine growth strategies.
 
-• SEO
-On-page SEO
-Technical SEO
-Website Optimization
+• Digital Marketing
+Social media marketing, Google Ads, Meta Ads, email marketing, lead generation, and conversion optimization.
 
-• AI Automation
-AI Chatbots
-Business Automation
-Workflow Automation
+• AI & Automation
+AI chatbots, business workflow automation, CRM automation, OpenAI integrations, and intelligent business solutions.
 
-• Data Analytics
-Business Reports
-Dashboard Development
-Analytics Solutions
+• Data Analytics & Business Intelligence
+Interactive dashboards, Power BI, Looker Studio, Excel automation, KPI reporting, and business intelligence solutions.
+
+• Mobile App Development
+Android, iOS, Flutter, React Native, cross-platform apps, and Progressive Web Apps (PWA).
+
+• Cloud & DevOps
+AWS, Azure, Google Cloud, Docker, Kubernetes, CI/CD pipelines, cloud deployment, and infrastructure automation.
+
+• API & Integrations
+REST APIs, GraphQL, payment gateways, CRM integrations, third-party APIs, and custom API development.
+
+• Creative Studio
+Video editing, motion graphics, product advertisements, YouTube content, thumbnails, animations, and creative marketing assets.
 
 --------------------------------------------------
 
-TECHNOLOGIES
-
-Next.js
-React
-TypeScript
-Tailwind CSS
-Node.js
-JavaScript
-Shopify
-WordPress
-HTML
-CSS
+AWS
+Azure
+Google Cloud
+Docker
+Kubernetes
+Flutter
+React Native
+Power BI
+Looker Studio
+OpenAI API
+Zapier
+Make.com
 
 --------------------------------------------------
 

@@ -29,12 +29,17 @@ type FormValues = z.infer<typeof formSchema>;
 
 const PROJECT_TYPES = [
   "Web Development",
-  "Shopify / E-commerce",
-  "UI/UX Design",
-  "Brand Identity",
+  "E-Commerce Development",
+  "UI/UX & Graphic Design",
+  "Branding & Identity",
   "SEO Optimization",
-  "AI Automation",
-  "Data & BI Dashboards",
+  "Digital Marketing",
+  "AI & Automation",
+  "Data Analytics & Business Intelligence",
+  "Mobile App Development",
+  "Cloud & DevOps",
+  "API & Integrations",
+  "Creative Studio",
   "Something else",
 ];
 
