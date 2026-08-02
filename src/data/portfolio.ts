@@ -19,7 +19,7 @@ export interface PortfolioProject {
   tech: string[];
   accentFrom: string;
   accentTo: string;
-  image?: string;
+  image: string;
 }
 
 export const PORTFOLIO_CATEGORIES: ("All" | PortfolioCategory)[] = [
