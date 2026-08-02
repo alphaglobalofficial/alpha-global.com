@@ -11,6 +11,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   author: string;
+  image: string;
   accentFrom: string;
   accentTo: string;
   content: BlogBlock[];
@@ -20,6 +21,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "choosing-the-right-ecommerce-platform-2026",
     title: "How to Choose the Right E-commerce Platform in 2026",
+    image: "/blog/ecommerce-platform-2026.jpeg",
     excerpt:
       "Shopify, WooCommerce, headless commerce — the right choice depends on more than price. Here's how we help clients decide.",
     category: "E-commerce",
@@ -73,6 +75,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "5-signs-your-website-is-losing-customers",
     title: "5 Signs Your Website Is Losing You Customers",
+      image: "/blog/website-losing-customers.png",
     excerpt:
       "Most underperforming websites don't look broken — they just quietly leak conversions. Here's what to check first.",
     category: "Web Development",
@@ -120,6 +123,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "why-startups-need-brand-identity-before-a-website",
     title: "Why Every Startup Needs a Brand Identity Before a Website",
+     image: "/blog/startup-brand-identity.png",
     excerpt:
       "Building a website before your brand identity is like decorating a house before you've poured the foundation.",
     category: "Branding",
@@ -171,6 +175,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "freelancer-vs-agency-whats-right-for-your-business",
     title: "Freelancer vs Agency: What's Right for Your Business?",
+     image: "/blog/freelancer-vs-agency.png",
     excerpt:
       "Both can deliver great work. The right choice depends on your timeline, budget, and how much you can manage yourself.",
     category: "Business",

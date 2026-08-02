@@ -8,7 +8,12 @@ import {
   Search,
   Share2,
   Bot,
+  Crown,
+  Building2,
   BarChart3,
+  Cloud,
+  Link,
+  Film,
   LayoutDashboard,
   FileSpreadsheet,
   Smartphone,
@@ -58,251 +63,469 @@ export const CLIENT_LOGOS: string[] = [
 
 export const SERVICES: Service[] = [
   {
-    slug: "web-development",
-    title: "Web Development",
-    shortDescription:
-      "Custom-built websites and web apps engineered for speed, scale, and measurable results.",
-    longDescription:
-      "We design and build fast, secure, and scalable websites using modern frameworks like Next.js and React. Every build is hand-coded for your business — no bloated page builders, no compromises on performance.",
-    icon: Code2,
-    category: "Development",
-    deliverables: [
-      "Custom Next.js / React development",
-      "Headless CMS integration",
-      "API & third-party integrations",
-      "Cross-browser & device testing",
-      "Deployment & hosting setup",
-    ],
-  },
+  slug: "web-development",
+  title: "Web Development",
+
+  shortDescription:
+    "Premium websites and web applications engineered for performance, scalability, and business growth.",
+
+  longDescription:
+    "We craft high-performance websites and custom web applications that combine exceptional design with powerful engineering. From startup landing pages to enterprise platforms, every solution is built with modern technologies, optimized for SEO, lightning-fast loading speeds, enterprise-grade security, and long-term scalability.",
+
+  icon: Code2,
+
+  category: "Development",
+
+  deliverables: [
+    "Custom Website Development",
+    "Business & Corporate Websites",
+    "Landing Page Development",
+    "Portfolio Websites",
+    "Next.js Development",
+    "React Development",
+    "WordPress Development",
+    "Webflow Development",
+    "Headless CMS Integration",
+    "REST API & Third-Party Integrations",
+    "Technical SEO Optimization",
+    "Mobile-First Responsive Design",
+    "Cross-Device Compatibility",
+    "Cross-Browser Testing",
+    "Touch-Optimized User Experience",
+    "Responsive Images & Media",
+    "Performance Optimization",
+    "Website Security & SSL",
+    "Performance Testing on Real Devices",
+    "Deployment, Hosting & Maintenance",
+  ],
+},
   {
-    slug: "shopify-development",
-    title: "Shopify Development",
-    shortDescription:
-      "Custom Shopify themes and app integrations built to convert browsers into buyers.",
-    longDescription:
-      "From custom theme development to complex app integrations, we build Shopify stores that load fast, look premium, and are optimized to sell — handling everything from product setup to checkout customization.",
-    icon: ShoppingBag,
-    category: "Development",
-    deliverables: [
-      "Custom theme design & development",
-      "App integration (DSers, Klaviyo, etc.)",
-      "Checkout & payment gateway setup",
-      "Speed & Core Web Vitals optimization",
-      "Post-launch training & handover",
-    ],
-  },
+  slug: "ecommerce-development",
+
+  title: "E-Commerce Development",
+
+  shortDescription:
+    "Scalable online stores engineered for higher conversions, automation, and long-term growth.",
+
+  longDescription:
+    "We design and develop premium e-commerce experiences that help brands sell more online. From Shopify and WooCommerce to headless commerce solutions, we build fast, secure, and conversion-focused stores with seamless payment, shipping, inventory, and automation systems. Every solution is optimized for customer experience, scalability, and measurable business growth.",
+
+  icon: ShoppingCart,
+
+  category: "Development",
+
+  deliverables: [
+    "Shopify Store Development",
+    "Shopify Plus Solutions",
+    "WooCommerce Development",
+    "Headless Commerce",
+    "Custom Store Design",
+    "Product & Collection Setup",
+    "Marketplace Development",
+    "Dropshipping Store Setup",
+    "DSers Integration",
+    "Payment Gateway Integration",
+    "Shipping & Tax Configuration",
+    "Inventory Management",
+    "Order Automation",
+    "Customer Account System",
+    "Store Migration",
+    "App Integrations",
+    "Email Marketing Integration",
+    "Analytics & Reporting",
+    "Conversion Rate Optimization (CRO)",
+    "Store Maintenance & Support",
+    "Website Maintenance",
+    "Website Monitoring",
+    "Security Updates",
+    "Regular Backups",
+    "Content Updates",
+    "Plugin & CMS Updates",
+    "Uptime Monitoring",
+    "Bug Fixes",
+    "Priority Technical Support",
+  ],
+},
   {
-    slug: "ecommerce-solutions",
-    title: "E-commerce Solutions",
-    shortDescription:
-      "End-to-end store builds across Shopify, WooCommerce, and headless commerce stacks.",
-    longDescription:
-      "Whether you're launching your first store or migrating a complex catalog, we handle product architecture, payment gateways, shipping logic, and inventory workflows so your store runs itself.",
-    icon: ShoppingCart,
-    category: "Development",
-    deliverables: [
-      "Platform selection & migration",
-      "Product catalog architecture",
-      "Payment & shipping configuration",
-      "Inventory & order automation",
-      "Conversion rate optimization",
-    ],
-  },
+  slug: "ui-ux-graphic-design",
+
+  title: "UI/UX & Graphic Design",
+
+  shortDescription:
+    "Modern digital experiences and stunning visual designs that strengthen your brand and increase user engagement.",
+
+  longDescription:
+    "We combine user-centered UI/UX design with premium graphic design to create visually stunning, intuitive, and conversion-focused digital experiences. From websites and mobile apps to complete brand assets, every design is crafted to improve usability, strengthen brand identity, and leave a lasting impression.",
+
+  icon: Palette,
+
+  category: "Design",
+
+  deliverables: [
+    "Website UI Design",
+    "Mobile App UI Design",
+    "Dashboard UI Design",
+    "SaaS UI/UX Design",
+    "Landing Page Design",
+    "Wireframing",
+    "Interactive Prototyping",
+    "User Experience Research",
+    "UX Audit",
+    "Design System Creation",
+    "Logo Design",
+    "Brand Identity Design",
+    "Social Media Creatives",
+    "Banner & Ad Design",
+    "Business Card Design",
+    "Brochure Design",
+    "Flyer & Poster Design",
+    "Packaging Design",
+    "Presentation Design",
+    "Figma Source Files",
+  ],
+},
   {
-    slug: "ui-ux-design",
-    title: "UI/UX Design",
-    shortDescription:
-      "Research-driven interfaces that feel effortless to use and unmistakably premium.",
-    longDescription:
-      "We map real user journeys before we design a single screen. The result is interfaces that reduce friction, build trust, and make your product feel current rather than dated.",
-    icon: Palette,
-    category: "Design",
-    deliverables: [
-      "User research & journey mapping",
-      "Wireframes & interactive prototypes",
-      "High-fidelity UI design systems",
-      "Usability testing",
-      "Developer handoff documentation",
-    ],
-  },
+  slug: "branding-identity",
+
+  title: "Branding & Identity",
+
+  shortDescription:
+    "Build a memorable brand with premium identity systems that inspire trust and recognition.",
+
+  longDescription:
+    "Your brand is more than just a logo—it's the complete experience your customers remember. We create strategic brand identities that communicate your values, differentiate your business from competitors, and establish a strong, consistent presence across every platform. From logo creation to complete brand systems, we ensure your business looks professional, premium, and unforgettable.",
+
+  icon: Fingerprint,
+
+  category: "Design",
+
+  deliverables: [
+    "Logo Design & Variations",
+    "Brand Strategy",
+    "Visual Identity System",
+    "Brand Guidelines",
+    "Typography System",
+    "Color Palette",
+    "Business Card Design",
+    "Letterhead Design",
+    "Email Signature Design",
+    "Social Media Brand Kit",
+    "Packaging Design",
+    "Product Label Design",
+    "Brand Presentation",
+    "Marketing Collateral",
+    "Brand Style Guide",
+    "Rebranding Services",
+    "Corporate Identity Design",
+    "Iconography System",
+    "Brand Assets Package",
+    "Print Ready Files",
+  ],
+},
   {
-    slug: "graphic-design",
-    title: "Graphic Design",
-    shortDescription:
-      "Visual assets — from social creatives to packaging — that keep your brand consistent everywhere.",
-    longDescription:
-      "Consistent, high-quality visuals across every touchpoint: social posts, ad creatives, pitch decks, packaging, and print. Assets that look like they came from the same brand, every time.",
-    icon: ImageIcon,
-    category: "Design",
-    deliverables: [
-      "Social media & ad creatives",
-      "Pitch deck & presentation design",
-      "Packaging & print design",
-      "Email & banner design",
-      "Editable design templates",
-    ],
-  },
+  slug: "seo-optimization",
+
+  title: "SEO Optimization",
+
+  shortDescription:
+    "Data-driven SEO strategies that increase visibility, traffic, and long-term business growth.",
+
+  longDescription:
+    "Our SEO services are designed to help your business dominate search results with sustainable, white-hat strategies. We combine technical optimization, keyword research, content strategy, performance improvements, and authority building to drive qualified organic traffic, improve search rankings, and maximize your return on investment.",
+
+  icon: Search,
+
+  category: "Growth",
+
+  deliverables: [
+    "Technical SEO Audit",
+    "Website SEO Optimization",
+    "Keyword Research & Strategy",
+    "Competitor Analysis",
+    "On-Page SEO",
+    "Off-Page SEO",
+    "Local SEO",
+    "E-Commerce SEO",
+    "Content Optimization",
+    "Internal Linking Strategy",
+    "Schema Markup",
+    "XML Sitemap & Robots.txt",
+    "Core Web Vitals Optimization",
+    "Google Search Console Setup",
+    "Google Analytics Integration",
+    "Backlink Strategy",
+    "SEO Performance Reports",
+    "Monthly Ranking Reports",
+    "SEO Consultation",
+    "Ongoing SEO Support",
+  ],
+},
   {
-    slug: "brand-identity",
-    title: "Brand Identity",
-    shortDescription:
-      "Logos, color systems, and brand guidelines that give your business a distinct, memorable voice.",
-    longDescription:
-      "Your brand should feel unmistakably yours. We build the full identity system — logo, typography, color, tone of voice, and usage guidelines — so every piece of communication feels consistent.",
-    icon: Fingerprint,
-    category: "Design",
-    deliverables: [
-      "Logo design & variations",
-      "Color palette & typography system",
-      "Brand guidelines document",
-      "Business card & stationery design",
-      "Social media brand kit",
-    ],
-  },
+  slug: "digital-marketing",
+
+  title: "Digital Marketing",
+
+  shortDescription:
+    "Performance-driven digital marketing strategies that grow your brand, generate qualified leads, and maximize ROI.",
+
+  longDescription:
+    "We help businesses grow through strategic digital marketing campaigns powered by data, creativity, and automation. From social media management and paid advertising to content marketing, email campaigns, and conversion optimization, every strategy is designed to increase brand awareness, drive targeted traffic, and deliver measurable business results.",
+
+  icon: Share2,
+
+  category: "Growth",
+
+  deliverables: [
+    "Social Media Management",
+    "Content Strategy",
+    "Monthly Content Calendar",
+    "Creative Post Design",
+    "Professional Copywriting",
+    "Facebook Marketing",
+    "Instagram Marketing",
+    "LinkedIn Marketing",
+    "TikTok Marketing",
+    "YouTube Marketing",
+    "Google Ads Management",
+    "Meta Ads Management",
+    "Email Marketing Campaigns",
+    "Lead Generation Funnels",
+    "Influencer Marketing",
+    "Community Management",
+    "Analytics & Performance Reports",
+    "Conversion Rate Optimization",
+    "Marketing Automation",
+    "Ongoing Campaign Optimization",
+  ],
+},
+ {
+  slug: "ai-automation",
+
+  title: "AI & Automation",
+
+  shortDescription:
+    "Intelligent AI solutions and workflow automation that increase productivity, reduce costs, and scale your business.",
+
+  longDescription:
+    "Transform your business with cutting-edge Artificial Intelligence and intelligent automation. We develop AI chatbots, AI agents, workflow automation, CRM integrations, and custom AI solutions that eliminate repetitive tasks, improve customer experiences, and help your team work smarter. From startups to enterprise businesses, we build secure, scalable, and future-ready AI systems powered by the latest technologies.",
+
+  icon: Bot,
+
+  category: "Data & Automation",
+
+  deliverables: [
+    "Custom AI Chatbots",
+    "AI Customer Support",
+    "AI Sales Agents",
+    "OpenAI / ChatGPT Integration",
+    "WhatsApp AI Bots",
+    "CRM Automation",
+    "Business Workflow Automation",
+    "Zapier Automation",
+    "Make.com Automation",
+    "Email Automation",
+    "Lead Qualification Automation",
+    "Document Processing AI",
+    "Data Extraction & AI Pipelines",
+    "AI Content Generation",
+    "Custom AI Applications",
+    "API Integrations",
+    "Analytics & Monitoring",
+    "Performance Optimization",
+    "Maintenance & Support",
+    "AI Strategy Consultation",
+  ],
+},
   {
-    slug: "seo-optimization",
-    title: "SEO Optimization",
-    shortDescription: "Technical and on-page SEO that gets you found — and keeps you ranking.",
-    longDescription:
-      "We audit your site's technical health, fix what's holding you back, and build an on-page and content strategy around how your customers actually search. Sustainable growth, no shortcuts.",
-    icon: Search,
-    category: "Growth",
-    deliverables: [
-      "Technical SEO audit",
-      "On-page & content optimization",
-      "Keyword strategy & mapping",
-      "Site speed & Core Web Vitals fixes",
-      "Monthly ranking reports",
-    ],
-  },
-  {
-    slug: "social-media-management",
-    title: "Social Media Management",
-    shortDescription: "Content calendars, creative, and community management that build real audiences.",
-    longDescription:
-      "From content planning to daily posting and community replies, we run your social presence like a full-time team — so you can focus on running your business.",
-    icon: Share2,
-    category: "Growth",
-    deliverables: [
-      "Monthly content calendar",
-      "Post design & copywriting",
-      "Community management",
-      "Performance reporting",
-      "Paid social campaign support",
-    ],
-  },
-  {
-    slug: "ai-automation",
-    title: "AI Automation",
-    shortDescription: "Custom AI workflows and chatbots that cut manual work and speed up your operations.",
-    longDescription:
-      "We build practical AI automations — customer support chatbots, lead qualification flows, internal workflow automation — that save hours every week without adding complexity to your stack.",
-    icon: Bot,
-    category: "Data & Automation",
-    deliverables: [
-      "Custom chatbot development",
-      "Workflow & task automation",
-      "CRM & tool integrations",
-      "AI content & data pipelines",
-      "Ongoing monitoring & tuning",
-    ],
-  },
-  {
-    slug: "data-analytics",
-    title: "Data Analytics",
-    shortDescription: "Turning raw business data into clear, actionable insight.",
-    longDescription:
-      "We connect your scattered data sources — sales, marketing, operations — into a single, clear picture, so decisions are based on evidence, not guesswork.",
-    icon: BarChart3,
-    category: "Data & Automation",
-    deliverables: [
-      "Data source consolidation",
-      "KPI definition & tracking",
-      "Custom reporting dashboards",
-      "Trend & cohort analysis",
-      "Monthly insight summaries",
-    ],
-  },
-  {
-    slug: "power-bi-dashboards",
-    title: "Power BI Dashboards",
-    shortDescription: "Live, interactive dashboards that put your KPIs in one place.",
-    longDescription:
-      "We design Power BI dashboards that pull directly from your live data — sales, inventory, ad spend, whatever matters — so your team always has an accurate, real-time view.",
-    icon: LayoutDashboard,
-    category: "Data & Automation",
-    deliverables: [
-      "Data model & source connections",
-      "Custom interactive dashboards",
-      "Automated data refresh",
-      "Role-based access setup",
-      "Team training & documentation",
-    ],
-  },
-  {
-    slug: "excel-automation",
-    title: "Excel Automation",
-    shortDescription: "Advanced spreadsheets, macros, and models that eliminate repetitive manual work.",
-    longDescription:
-      "If your team is still copy-pasting numbers between spreadsheets, we can fix that — automated Excel models, macros, and templates that turn hours of manual work into a single click.",
-    icon: FileSpreadsheet,
-    category: "Data & Automation",
-    deliverables: [
-      "Custom Excel models & templates",
-      "VBA macro development",
-      "Automated report generation",
-      "Data validation & error-checking",
-      "Team handover & training",
-    ],
-  },
-  {
-    slug: "mobile-responsive-design",
-    title: "Mobile Responsive Design",
-    shortDescription: "Every project engineered to look and perform flawlessly on any device.",
-    longDescription:
-      "More than half of your visitors are on mobile. We design and test every project across phones, tablets, and desktops so the experience never feels like an afterthought.",
-    icon: Smartphone,
-    category: "Development",
-    deliverables: [
-      "Mobile-first design approach",
-      "Cross-device testing",
-      "Touch-optimized interactions",
-      "Responsive image & asset handling",
-      "Performance testing on real devices",
-    ],
-  },
-  {
-    slug: "website-maintenance",
-    title: "Website Maintenance",
-    shortDescription: "Ongoing updates, monitoring, and support so your site always runs at its best.",
-    longDescription:
-      "Websites need upkeep — security patches, backups, content updates, uptime monitoring. Our maintenance plans keep your site secure, fast, and current without you having to think about it.",
-    icon: Wrench,
-    category: "Development",
-    deliverables: [
-      "Security updates & monitoring",
-      "Regular backups",
-      "Content & plugin updates",
-      "Uptime & performance monitoring",
-      "Priority support response",
-    ],
-  },
-  {
-    slug: "performance-optimization",
-    title: "Performance Optimization",
-    shortDescription: "Speed audits and technical tuning for faster load times and higher conversions.",
-    longDescription:
-      "Every second of load time costs conversions. We audit, tune, and re-test your site's performance — images, scripts, caching, hosting — until it's genuinely fast, not just fast enough.",
-    icon: Gauge,
-    category: "Development",
-    deliverables: [
-      "Core Web Vitals audit",
-      "Image & asset optimization",
-      "Caching & CDN configuration",
-      "Code splitting & lazy loading",
-      "Before/after performance report",
-    ],
-  },
+  slug: "data-analytics",
+
+  title: "Data Analytics & Business Intelligence",
+
+  shortDescription:
+    "Transform raw data into actionable insights with interactive dashboards, advanced analytics, and business intelligence solutions.",
+
+  longDescription:
+    "We help businesses unlock the full value of their data through advanced analytics and business intelligence solutions. From interactive dashboards and KPI tracking to predictive analytics and automated reporting, we provide the insights you need to make smarter, data-driven decisions, improve operational efficiency, and accelerate business growth.",
+
+  icon: BarChart3,
+
+  category: "Data & Automation",
+
+  deliverables: [
+  "Business Intelligence Solutions",
+  "Power BI Dashboard Development",
+  "Power BI Service Deployment",
+  "Google Looker Studio Dashboards",
+  "Microsoft Excel Dashboards",
+  "Excel Automation",
+  "VBA Macro Development",
+  "Power Query Automation",
+  "Data Cleaning & Transformation",
+  "Data Visualization",
+  "Sales Analytics",
+  "Marketing Analytics",
+  "Customer Analytics",
+  "Financial Analytics",
+  "Operational Analytics",
+  "Custom KPI Dashboards",
+  "Executive Reporting",
+  "Automated Reports",
+  "Predictive Analytics",
+  "Business Intelligence Consulting",
+  ],
+},
+{
+  slug: "mobile-app-development",
+
+  title: "Mobile App Development",
+
+  shortDescription:
+    "Custom Android, iOS, and cross-platform applications built for performance, scalability, and exceptional user experiences.",
+
+  longDescription:
+    "We develop high-performance mobile applications that help businesses engage customers, streamline operations, and accelerate growth. From startup MVPs to enterprise-grade applications, our apps are designed with modern technologies, intuitive user experiences, and scalable architectures.",
+
+  icon: Smartphone,
+
+  category: "Development",
+
+  deliverables: [
+    "Android App Development",
+    "iOS App Development",
+    "Flutter App Development",
+    "React Native Development",
+    "Cross-Platform Applications",
+    "Progressive Web Apps (PWA)",
+    "App UI/UX Design",
+    "Firebase Integration",
+    "REST API Integration",
+    "Authentication Systems",
+    "Push Notifications",
+    "Payment Gateway Integration",
+    "Google Maps Integration",
+    "App Performance Optimization",
+    "App Store Publishing",
+    "Google Play Publishing",
+    "App Maintenance",
+    "Bug Fixes & Updates",
+    "Analytics Integration",
+    "Ongoing Technical Support",
+  ],
+},
+{
+  slug: "cloud-devops",
+
+  title: "Cloud & DevOps",
+
+  shortDescription:
+    "Modern cloud infrastructure and DevOps solutions for secure, scalable, and reliable applications.",
+
+  longDescription:
+    "We help businesses deploy, manage, and scale applications using modern cloud platforms and DevOps best practices. From infrastructure setup to CI/CD automation, we ensure your applications remain secure, reliable, and always available.",
+
+  icon: Cloud,
+
+  category: "Data & Automation",
+
+  deliverables: [
+    "AWS Deployment",
+    "Microsoft Azure",
+    "Google Cloud Platform",
+    "DigitalOcean",
+    "Docker Containerization",
+    "Kubernetes",
+    "CI/CD Pipelines",
+    "GitHub Actions",
+    "Server Configuration",
+    "Cloud Migration",
+    "SSL & Security",
+    "Load Balancing",
+    "Monitoring & Logging",
+    "Backup Solutions",
+    "Infrastructure Automation",
+    "Domain Configuration",
+    "Email Server Setup",
+    "Performance Monitoring",
+    "Cloud Cost Optimization",
+    "24/7 Infrastructure Support",
+  ],
+},
+{
+  slug: "api-integrations",
+
+  title: "API & Integrations",
+
+  shortDescription:
+    "Seamless integrations connecting your applications, platforms, and business tools.",
+
+  longDescription:
+    "We integrate modern APIs and third-party services to automate workflows, improve efficiency, and connect your business ecosystem into one seamless experience.",
+
+  icon: Link,
+
+  category: "Development",
+
+  deliverables: [
+    "REST API Development",
+    "GraphQL APIs",
+    "Stripe Integration",
+    "PayPal Integration",
+    "Twilio Integration",
+    "Firebase Integration",
+    "Supabase Integration",
+    "CRM Integration",
+    "ERP Integration",
+    "Webhook Development",
+    "Payment APIs",
+    "Social Login Integration",
+    "Google APIs",
+    "Microsoft APIs",
+    "WhatsApp API",
+    "OpenAI API Integration",
+    "Custom API Development",
+    "API Documentation",
+    "Testing & Debugging",
+    "API Maintenance",
+  ],
+},
+{
+  slug: "creative-studio",
+
+  title: "Creative Studio",
+
+  shortDescription:
+    "Premium creative content that helps brands stand out across digital platforms.",
+
+  longDescription:
+    "Our creative team produces visually compelling content that strengthens your brand identity and increases engagement. From product advertisements to motion graphics, we create assets designed to convert and leave lasting impressions.",
+
+  icon: Film,
+
+  category: "Design",
+
+  deliverables: [
+    "Video Editing",
+    "Motion Graphics",
+    "Product Advertisement Videos",
+    "Social Media Reels",
+    "YouTube Shorts",
+    "Commercial Videos",
+    "Thumbnail Design",
+    "Banner Design",
+    "Brochure Design",
+    "Presentation Design",
+    "Product Mockups",
+    "3D Mockups",
+    "Photo Retouching",
+    "Print Design",
+    "Marketing Creatives",
+    "Animation",
+    "Brand Campaign Assets",
+    "Creative Direction",
+    "Content Production",
+    "Creative Consultation",
+  ],
+},
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
@@ -411,6 +634,8 @@ export const PROCESS_STEPS: ProcessStep[] = [
 export const PRICING_TIERS: PricingTier[] = [
   {
     name: "Starter",
+    icon: Rocket,
+    supportLabel: "Email Support",
     price: 499,
     priceSuffix: "starting price",
     tagline: "For small businesses & solo founders getting online.",
@@ -426,6 +651,8 @@ export const PRICING_TIERS: PricingTier[] = [
   },
   {
     name: "Professional",
+    icon: Crown,
+    supportLabel: "Priority Support",
     price: 1499,
     priceSuffix: "starting price",
     tagline: "For growing businesses & e-commerce brands.",
@@ -444,6 +671,8 @@ export const PRICING_TIERS: PricingTier[] = [
   },
   {
     name: "Enterprise",
+    icon: Building2,
+    supportLabel: "24/7 Dedicated",
     price: 0,
     priceSuffix: "custom quote",
     tagline: "For large teams with complex, multi-phase scopes.",
@@ -460,7 +689,6 @@ export const PRICING_TIERS: PricingTier[] = [
     cta: "Talk to Us",
   },
 ];
-
 export const COMPARISON_ROWS: ComparisonRow[] = [
   { feature: "Custom design (not templates)", starter: true, professional: true, enterprise: true },
   { feature: "Number of pages", starter: "Up to 5", professional: "Up to 12", enterprise: "Unlimited" },

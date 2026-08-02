@@ -12,12 +12,14 @@ export interface PortfolioProject {
   category: PortfolioCategory;
   year: string;
   blurb: string;
+  overview: string;
   challenge: string;
   solution: string;
   results: { label: string; value: string }[];
   tech: string[];
   accentFrom: string;
   accentTo: string;
+  image?: string;
 }
 
 export const PORTFOLIO_CATEGORIES: ("All" | PortfolioCategory)[] = [
@@ -37,6 +39,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "E-commerce",
     year: "2025",
     blurb: "Custom Shopify build for a home goods brand scaling past 500 SKUs.",
+    overview:
+      "Lumen Goods came to us with a fast-growing home goods catalog and a Shopify theme that couldn't keep up. Our job was to give the brand a storefront that felt as premium as the products themselves — without sacrificing the speed a modern shopper expects.",
     challenge:
       "Lumen Goods was running on a generic Shopify theme that couldn't handle their growing catalog. Load times were slow, mobile conversion lagged behind desktop, and the checkout experience felt disconnected from the brand.",
     solution:
@@ -49,6 +53,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["Shopify", "Liquid", "JavaScript", "Klaviyo"],
     accentFrom: "#3D7FFF",
     accentTo: "#9B5CFF",
+      image: "/portfolio/lumen-goods(1).png",
   },
   {
     slug: "fintra-capital",
@@ -57,6 +62,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "Web Development",
     year: "2025",
     blurb: "Marketing site and client dashboard preview for a fintech startup.",
+    overview:
+      "Fintra Capital was preparing to raise a seed round while onboarding its first wave of customers — two very different audiences that needed to trust the same website. We built a site that could speak to both.",
     challenge:
       "Fintra needed to raise a seed round and onboard early customers simultaneously, but their existing site read like a pitch deck — heavy on claims, light on credibility and clarity.",
     solution:
@@ -69,6 +76,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     accentFrom: "#22D3EE",
     accentTo: "#3B82F6",
+      image: "/portfolio/fintra-capital.png",
   },
   {
     slug: "verdant-foods",
@@ -77,6 +85,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "Branding",
     year: "2024",
     blurb: "Logo, packaging, and brand guidelines for a farm-to-table food brand.",
+    overview:
+      "Verdant Foods was entering a crowded organic food category with nothing more than a temporary wordmark. We were brought in to build the full identity system the brand would carry from shelf to screen.",
     challenge:
       "Verdant Foods was launching into a crowded organic foods category with no visual identity beyond a temporary logo, making it hard to stand out on shelf or online.",
     solution:
@@ -89,6 +99,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["Illustrator", "Figma", "Brand Strategy"],
     accentFrom: "#34D399",
     accentTo: "#22D3EE",
+     image: "/portfolio/verdant-foods.png",
   },
   {
     slug: "orbital-fitness",
@@ -97,6 +108,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "UI/UX Design",
     year: "2025",
     blurb: "Full UI/UX redesign for a workout tracking mobile app.",
+    overview:
+      "Orbital Fitness had the retention problem every fitness app fears — strong functionality, but users disappearing after week one. We were asked to find out why, and fix it.",
     challenge:
       "Orbital's existing app had strong functionality but a cluttered, dated interface that was hurting retention — users were dropping off after the first week.",
     solution:
@@ -109,6 +122,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["Figma", "Prototyping", "Usability Testing"],
     accentFrom: "#F472B6",
     accentTo: "#A855F7",
+      image: "/portfolio/orbital-fitness.png",
+
   },
   {
     slug: "atlas-works",
@@ -117,6 +132,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "Web Development",
     year: "2024",
     blurb: "Marketing site rebuild for a workflow automation SaaS platform.",
+    overview:
+      "Atlas Works' sales team was answering the same product questions on every single call. We rebuilt the marketing site to do that explaining for them, long before a prospect ever picked up the phone.",
     challenge:
       "Atlas Works' sales team was fielding the same basic product questions on every call because the website failed to explain the product clearly enough to qualify leads beforehand.",
     solution:
@@ -129,6 +146,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["Next.js", "Sanity CMS", "TypeScript"],
     accentFrom: "#3D7FFF",
     accentTo: "#5993FF",
+      image: "/portfolio/atlas-works.png",
   },
   {
     slug: "prime-cart",
@@ -137,6 +155,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "E-commerce",
     year: "2025",
     blurb: "Store architecture and automation for a gadgets & lifestyle dropshipping brand.",
+    overview:
+      "Prime Cart's founder was running a growing dropshipping business out of spreadsheets and manual processes. We were brought in to give the operation a real system to grow on.",
     challenge:
       "Prime Cart's founder was managing product research, listings, and order fulfillment manually across spreadsheets, which capped how fast the store could grow.",
     solution:
@@ -149,6 +169,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["Shopify", "DSers", "Meta Pixel", "Google Analytics"],
     accentFrom: "#FBBF24",
     accentTo: "#FB923C",
+    image: "/portfolio/prime-cart.png",
   },
   {
     slug: "haven-and-co",
@@ -157,6 +178,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "Branding",
     year: "2024",
     blurb: "Brand identity and booking site for a boutique hotel group.",
+    overview:
+      "Haven & Co operates three boutique properties that felt like three different brands online. We unified them into one warm, editorial identity — and a booking site that finally matched the experience of staying there.",
     challenge:
       "Haven & Co had three properties with inconsistent branding and a booking site that felt more like a listings directory than a hospitality brand.",
     solution:
@@ -169,6 +192,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["Webflow", "Figma", "Brand Strategy"],
     accentFrom: "#A476FF",
     accentTo: "#3D7FFF",
+    image: "/portfolio/haven-co.png",
   },
   {
     slug: "zenith-labs",
@@ -177,6 +201,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "AI & Automation",
     year: "2025",
     blurb: "AI support chatbot and internal workflow automation for a SaaS support team.",
+    overview:
+      "Zenith Labs' small support team was buried in repetitive tickets with no room left for the complex issues that actually needed a human. We built the AI layer that gave them that room back.",
     challenge:
       "Zenith Labs' small support team was drowning in repetitive tickets — password resets, billing questions, basic troubleshooting — leaving little time for complex issues.",
     solution:
@@ -189,5 +215,43 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tech: ["OpenAI API", "Node.js", "Zendesk API"],
     accentFrom: "#9B5CFF",
     accentTo: "#3D7FFF",
+    image: "/portfolio/zenith-labs.png",
   },
+  {
+  slug: "medsync-health",
+  title: "A healthcare platform that simplifies patient care",
+  client: "MedSync Health · Healthcare",
+  category: "Web Development",
+  year: "2025",
+  blurb: "Custom healthcare platform for appointment scheduling, patient records, and telehealth.",
+
+  overview:
+    "MedSync Health needed a secure digital platform where patients could book appointments, access medical records, and connect with doctors online. We designed a fast, modern experience focused on accessibility, trust, and compliance.",
+
+  challenge:
+    "The clinic relied on manual appointment booking and disconnected patient records, resulting in scheduling conflicts, administrative delays, and a poor patient experience.",
+
+  solution:
+    "We developed a responsive healthcare platform with online appointment booking, secure patient portals, telemedicine integration, automated reminders, and an admin dashboard for managing patients, doctors, and schedules.",
+
+  results: [
+    { label: "Appointment bookings", value: "+52%" },
+    { label: "Administrative workload", value: "-43%" },
+    { label: "Patient satisfaction", value: "+37%" },
+  ],
+
+  tech: [
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Twilio",
+  ],
+
+  accentFrom: "#0EA5E9",
+  accentTo: "#14B8A6",
+
+  image: "/portfolio/medsync-health.png",
+}
 ];

@@ -1,13 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import * as React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Check, Star, X } from "lucide-react";
+import { ArrowUpRight, Check, Star, X, Sparkles, } from "lucide-react";
 import type { Service } from "@/data/types";
 import type { PortfolioProject } from "@/data/portfolio";
 import type { Testimonial } from "@/data/testimonials";
 import type { PricingTier } from "@/data/types";
-import { IconBadge, Badge } from "@/components/ui/primitives";
+import { IconBadge, Badge, Divider } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/button";
 import { cn, formatUSD } from "@/lib/utils";
 
@@ -154,7 +155,14 @@ export function ProjectCard({
     >
       <div className="relative overflow-hidden rounded-2xl">
         <div className="transition-transform duration-700 ease-premium group-hover:scale-[1.04]">
-          <GradientMockFrame accentFrom={project.accentFrom} accentTo={project.accentTo} />
+          <Image
+         src={project.image}
+         alt={project.title}
+         width={1200}
+         height={800}
+         className="h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-[1.04]"
+         priority={index < 3}
+/>
         </div>
         <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/0 to-black/0 p-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
           <span className="flex items-center gap-1.5 text-sm font-medium text-white">
@@ -179,11 +187,13 @@ export function ProjectCard({
 export function ProjectDetailContent({ project }: { project: PortfolioProject }) {
   return (
     <div>
-      <GradientMockFrame
-        accentFrom={project.accentFrom}
-        accentTo={project.accentTo}
-        className="aspect-[16/9]"
-      />
+      <Image
+       src={project.image}
+       alt={project.title}
+       width={1600}
+       height={1000}
+       className="h-full w-full object-cover"
+/>
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -268,31 +278,63 @@ export function PricingCard({
   tier: PricingTier;
   index?: number;
 }) {
+  const Icon = tier.icon ?? Sparkles;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 32, scale: 0.98 }}
+      whileInView={{
+        opacity: 1,
+        y: tier.featured ? -14 : 0,
+        scale: tier.featured ? 1.03 : 1,
+      }}
+      whileHover={{
+        y: tier.featured ? -20 : -6,
+        scale: tier.featured ? 1.04 : 1.015,
+      }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "relative flex flex-col rounded-[28px] p-8",
+        "relative flex flex-col rounded-[28px] p-8 transition-shadow duration-500 sm:p-9",
         tier.featured
-          ? "border-gradient bg-card shadow-glow-lg lg:-translate-y-4"
-          : "glass"
+          ? "border-gradient bg-card shadow-glow-lg"
+          : "glass hover:shadow-glow-sm"
       )}
     >
       {tier.featured && (
-        <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-electric px-4 py-1 text-xs font-semibold text-white shadow-glow-sm">
-          Most Popular
-        </span>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-px -z-10 rounded-[28px] bg-gradient-electric opacity-[0.07] blur-2xl"
+        />
       )}
-      <h3 className="text-lg font-semibold">{tier.name}</h3>
+      {tier.featured && (
+        <motion.span
+          initial={{ opacity: 0, y: -8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-electric px-4 py-1 text-xs font-semibold text-white shadow-glow-sm"
+        >
+          Most Popular
+        </motion.span>
+      )}
+
+      <div className="flex items-start justify-between">
+        <IconBadge icon={<Icon className="size-5" strokeWidth={1.75} />} />
+        <Badge className="border-electric/20 bg-electric/5 text-electric">
+          {tier.supportLabel}
+        </Badge>
+      </div>
+
+      <h3 className="mt-6 text-lg font-semibold">{tier.name}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{tier.tagline}</p>
       <div className="mt-6 flex items-baseline gap-2">
         {tier.price > 0 ? (
-          <span className="text-4xl font-semibold tracking-tight">{formatUSD(tier.price)}</span>
+          <span className="text-4xl font-semibold tracking-tight sm:text-[2.75rem]">
+            {formatUSD(tier.price)}
+          </span>
         ) : (
-          <span className="text-4xl font-semibold tracking-tight">Custom</span>
+          <span className="text-4xl font-semibold tracking-tight sm:text-[2.75rem]">Custom</span>
         )}
         <span className="text-sm text-muted-foreground">{tier.priceSuffix}</span>
       </div>
@@ -300,9 +342,11 @@ export function PricingCard({
         href="/consultation"
         variant={tier.featured ? "gradient" : "outline"}
         className="mt-7 w-full"
+        icon={tier.featured}
       >
         {tier.cta}
       </Button>
+      <Divider className="mt-8" />
       <ul className="mt-8 flex flex-col gap-3.5">
         {tier.features.map((feature) => (
           <li key={feature} className="flex items-start gap-3 text-sm text-foreground/90">

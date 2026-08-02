@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container, Section, Eyebrow, GlowOrb, Badge } from "@/components/ui/primitives";
@@ -34,9 +35,15 @@ export function BlogClient() {
             {BLOG_POSTS.map((post) => (
               <RevealItem key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="group flex flex-col gap-5">
-                  <div className="overflow-hidden rounded-2xl transition-transform duration-700 ease-premium group-hover:scale-[1.02]">
-                    <GradientMockFrame accentFrom={post.accentFrom} accentTo={post.accentTo} />
-                  </div>
+                 <div className="relative aspect-[21/9] overflow-hidden rounded-3xl">
+  <Image
+    src={post.image}
+    alt={post.title}
+    fill
+    priority
+    className="object-cover"
+  />
+</div>
                   <div>
                     <div className="flex items-center gap-3">
                       <Badge>{post.category}</Badge>

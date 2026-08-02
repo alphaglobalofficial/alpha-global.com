@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Container, Section, Badge } from "@/components/ui/primitives";
@@ -95,12 +96,23 @@ export function BlogPostClient({ post }: { post: BlogPost }) {
 
       <Container className="max-w-3xl">
         <Reveal delay={0.1}>
-          <GradientMockFrame
-            accentFrom={post.accentFrom}
-            accentTo={post.accentTo}
-            className="aspect-[21/9]"
-          />
-        </Reveal>
+  <div className="relative aspect-[21/9] overflow-hidden rounded-3xl border border-border">
+    <Image
+      src={post.image}
+      alt={post.title}
+      fill
+      priority
+      className="object-cover"
+    />
+
+    <div
+      className="absolute inset-0 opacity-5"
+      style={{
+        background: `linear-gradient(135deg, ${post.accentFrom}, ${post.accentTo})`,
+      }}
+    />
+  </div>
+</Reveal>
       </Container>
 
       <Section className="max-w-3xl">

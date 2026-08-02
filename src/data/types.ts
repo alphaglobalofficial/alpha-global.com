@@ -24,6 +24,8 @@ export interface PricingTier {
   price: number;
   priceSuffix: string;
   tagline: string;
+  icon: LucideIcon;
+  supportLabel: string;
   featured?: boolean;
   features: string[];
   cta: string;
